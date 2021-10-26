@@ -1,21 +1,30 @@
+import CartWidget from "../CartWidget/CartWidget";
+
+let styleTitulo = {
+    fontSize: '4vh',
+    fontWeight: 'bolder',
+    color: 'white'
+}
+let styleMenu = {
+    fontSize: '2vh',
+    fontWeight: 'bolder',
+    color: 'white'
+}
+
 function NavBar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-primary">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">TIENDA MIA</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon">
-                            <h1>hola</h1>
-                        </span>
-                    </button>
+                <a style={styleTitulo} className="navbar-brand" href="#">TIENDA MIA</a>
                     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                        <a className="nav-link active" aria-current="page" href="#">INICIO</a>
-                        <a className="nav-link" href="#">CATALOGO</a>
-                        <a className="nav-link" href="#">PROMOCIONES</a>
+                            <a style={styleMenu}  className="nav-link active" aria-current="page" href="#">INICIO</a>
+                            <a style={styleMenu}  className="nav-link" href="#">CATALOGO</a>
+                            <a style={styleMenu}  className="nav-link" href="#">PROMOCIONES</a>
                         </div>
                     </div>
             </div>
+            <CartWidget />
         </nav>
         
     );
