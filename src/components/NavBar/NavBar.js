@@ -26,8 +26,6 @@ function NavBar() {
             </div>
             <CartWidget />
         </nav>
-        
     );
 }
-  
   export default NavBar

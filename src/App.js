@@ -4,14 +4,11 @@ import Navbar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 
 function App() {
-  let saludo = 'hola mundo'
   return (
-    <>            
+    <div className="App">            
       <Navbar />
       <ItemListContainer greeting="Bienvenido a TIENDA MIA, tu e-commerce de confianza" />      
-    </>
+    </div>
   );
 }
-
 export default App;
-
