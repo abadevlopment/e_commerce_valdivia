@@ -1,30 +1,22 @@
 import CartWidget from "../CartWidget/CartWidget";
 
-let styleTitulo = {
-    fontSize: '4vh',
-    fontWeight: 'bolder',
-    color: 'white'
-}
-let styleMenu = {
-    fontSize: '2vh',
-    fontWeight: 'bolder',
-    color: 'white'
-}
-
 function NavBar() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-primary">
+        <nav className="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
             <div className="container-fluid">
-                <a style={styleTitulo} className="navbar-brand" href="#">TIENDA MIA</a>
-                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div className="navbar-nav">
-                            <a style={styleMenu}  className="nav-link active" aria-current="page" href="#">INICIO</a>
-                            <a style={styleMenu}  className="nav-link" href="#">CATALOGO</a>
-                            <a style={styleMenu}  className="nav-link" href="#">PROMOCIONES</a>
+                <a  className="navbar-brand" href="#">
+                    <img src="" alt="" width="30" height="24" class="d-inline-block align-text-top"/>
+                    ELECT-COMMERCE
+                </a>
+                    <div className=" navbar-collapse" id="navbarNavAltMarkup">
+                        <div className="navbar-nav flex-row justify-content-around container">
+                            <a className="nav-link active" aria-current="page" href="#">INICIO</a>
+                            <a className="nav-link" href="#">CATALOGO</a>
+                            <a className="nav-link" href="#">PROMOCIONES</a>
+                            <CartWidget />
                         </div>
                     </div>
             </div>
-            <CartWidget />
         </nav>
     );
 }
