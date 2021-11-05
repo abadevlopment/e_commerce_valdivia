@@ -5,7 +5,7 @@ function NavBar() {
         <nav className="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
             <div className="container-fluid">
                 <a  className="navbar-brand" href="#">
-                    <img src="" alt="" width="30" height="24" class="d-inline-block align-text-top"/>
+                    <img src="" alt="" width="30" height="24" className="d-inline-block align-text-top"/>
                     ELECT-COMMERCE
                 </a>
                     <div className=" navbar-collapse" id="navbarNavAltMarkup">

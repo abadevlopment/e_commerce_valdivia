@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import { getFetch } from '../Products/getFetch';
 import ItemList from './ItemList/ItemList';
-import './ItemListContainer.css';
 import loadingArrow from './loadingArrow.png'
 import './ItemListContainer.scss'
 

@@ -1,0 +1,79 @@
+#extra2 {
+    border: green solid 2px;
+    .descripcion {
+        border: red solid 2px;
+        width: 60vw;
+        height: 80vh;
+        margin: 3vh;
+        display: grid;
+        grid-template-columns: 25vw 35vw;
+        grid-template-rows: 8vh 50vh 5.5vh 5.5vh 5.5vh 5.5vh;
+        grid-template-areas: 
+            "dt dt"
+            "di din"
+            "dp din"
+            "dc din"
+            "ds din"
+            "dr din";
+        .descTit{
+            grid-area: dt;
+            border: green solid 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4vh;
+            font-weight: bolder;
+        }
+        .descImg{
+            grid-area: di;
+            border: green solid 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .descPrec{
+            grid-area: dp;
+            border: green solid 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .descCount{
+            grid-area: dc;
+            border: green solid 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .descStock{
+            grid-area: ds;
+            border: green solid 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .descRet{
+            grid-area: dr;
+            border: green solid 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .descInfo{
+            grid-area: din;
+            border: green solid 1px;
+            tbody{
+                font-size: 2vh;
+                tr {
+                    td{
+                        border-bottom: blue solid 1px;
+                        width: 17.5vw;
+                        
+                    }
+                }
+            }
+        }
+
+    }
+}
