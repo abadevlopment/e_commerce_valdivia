@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# ELEC-STORE : E-commerce de electrónica
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+App destinada a la venta de: boards, circuitos, componentes y accesorios electrónicos.
+Este proyecto fue creado con: [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## EJECUTAR EL PROYECTO
 
-In the project directory, you can run:
+Para inicializar el proyecto, en el directorio del poryecto ingresar:
 
-### `npm start`
+## `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### EL PROYECTO ESTA DIVIDIDO EN LOS COMPONENTES Y ANIDADOS
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### IMPLEMENTADAS
 
-### `npm test`
+* NavBAr - Barra de navegación con todo lo necesario para navegar por la aplicación, incluido el CartWidget, 
+* ItemListContainer - Contenedor del catálogo de productos se renderiza el componente ItemList 
+  * ItemList - Se renderiza el arreglo de productos a travez del componente Item
+  * Item
+* ItemDetailContainer - Contenedor del detalle del producto seleccionado se renderiza el componente ItemDetail
+  *ItemDetail - Serenderiza el arreglo del producto seleccionado 
+* CartWidget - Por implementar
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### POR IMPLEMENTAR
 
-### `npm run build`
+* ItemCount - Renderiza los botones de conteo asi como el numero de productos seleccionados y el boton agregar
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### TEMPORALES
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* getFetch - Componente temporal en donde se hard-codea el arreglo de productos
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### LIBRERIAS INCLUIDAS
 
-### `npm run eject`
+* bootstrap 5.1.3 -
+* node-sass 6.0.1 -
+* react-router-dom 6.0.1 - 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### CLONAR EL REPOSITORIO EN VISUAL STUDIO CODE
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Cree un directorio donde se guardarán los repositorios
+2. Abra el directorio en Visual Studio Code (menú Archivo > Abrir carpeta ...)
+3. Para clonar el repositorio necesitará dos rutas (el origen y el destino):
+    *`https://github.com/abadevlopment/e_commerce_valdivia`
+    *La ruta del directorio de destino
+4. En Visual Studio abra la ventana de comandos con Ctrl+Mayús+p
+5. Escriba el comando git:clone y pulse Intro
+6. Escriba la URL del repositorio de origen y pulse Intro
+7. Escriba la ruta del directorio que contendrá la copia y pulse Intro
+8. En unos segundos se mostrará la carpeta del repositorio clonado en la barra del explorador y se ofrecerá la posibilidad de abrir la carpeta del repositorio clonado. Haga clic en "Abrir repositorio"
+9. Visual Studio Code abrirá la carpeta del repositorio clonado, mostrando su contenido 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## PREVIEW
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![Preview App](https://res.cloudinary.com/dvinxey2w/image/upload/v1636834667/ARDUINO/PREVIEW_jgxlie.png)
 
-## Learn More
+#### NOTAS
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Este es mi primer proyecto creado con 
+## `https://es.reactjs.org/`

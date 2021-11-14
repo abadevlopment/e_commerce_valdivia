@@ -7,9 +7,6 @@ function CartWidget() {
                 <img style={ {height: '4vh'} } src={Cart} className="Cart-logo" alt="Cart" />
             </button>
             <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-                <li><a className="dropdown-item" href="#">Prueba1</a></li>
-                <li><a className="dropdown-item" href="#">Prueba2</a></li>
-                <li><a className="dropdown-item" href="#">Prueba3</a></li>
             </ul>
         </div>
     );

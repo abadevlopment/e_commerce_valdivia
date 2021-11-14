@@ -1,0 +1,78 @@
+#header{
+    width: 100%;
+    height: 8%;
+    background-color: #0d6efd;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 100%;
+    grid-template-areas: 
+        "dl di do dc";
+    #divLogo{
+        grid-area: dl;
+        display: flex;
+        align-items: center;
+        
+        #logo{
+            color: white;
+            height: 90%;
+            width: 30%;
+            margin: 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                height: 100%;
+            }
+        }
+        #brand{
+            color: white;
+            width: 60%;
+            height: 90%;
+            margin: 5%;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: x-large;
+            text-decoration: none;
+            p{
+                display: flex;
+            align-items: center;
+            justify-content: center;
+                font-size: 1.5vw;
+            }
+        }
+    }
+    #divInicio{
+        grid-area: di;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        #inicio{
+            width: 90%;
+            height: 90%;
+            margin: 5%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: large;
+        }
+    }
+    #divOpc{
+        grid-area: do;
+        display: flex;
+        align-items: center;
+        button{
+            width: 90%;
+            height: 90%;
+            margin: 5%;
+            font-size: large;
+        }
+    }
+    #divCart{
+        grid-area: dc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

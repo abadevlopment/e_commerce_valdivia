@@ -1,79 +1,175 @@
 #extra2 {
-    border: green solid 2px;
-    .descripcion {
-        border: red solid 2px;
-        width: 60vw;
-        height: 80vh;
-        margin: 3vh;
+    margin-top: 8vh;
+    width: 100%;
+    height: 91vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    #divDesc{
+        width: 80%;
+        height: 95%;
+        border: #0d6efd solid 0.75vh;
         display: grid;
-        grid-template-columns: 25vw 35vw;
-        grid-template-rows: 8vh 50vh 5.5vh 5.5vh 5.5vh 5.5vh;
+        grid-template-columns: 50% 50% ;
+        grid-template-rows: 100%;
         grid-template-areas: 
-            "dt dt"
-            "di din"
-            "dp din"
-            "dc din"
-            "ds din"
-            "dr din";
-        .descTit{
-            grid-area: dt;
-            border: green solid 1px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 4vh;
-            font-weight: bolder;
-        }
-        .descImg{
-            grid-area: di;
-            border: green solid 1px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            "dd1 dd2";
+        #divDesc1{
+            grid-area: dd1;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 8% 58% 7% 13% 7% 7%;
+            grid-template-areas: 
+                "dt"
+                "di"
+                "dp"
+                "dc"
+                "ds"
+                "dr";
+            .descTit{
+                grid-area: dt;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2vw;
+                font-weight: bolder;
+            }
+            .descImg{
+                grid-area: di;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .descImagen{
+                    max-height: 100%;
+                    width: auto;
+                }
+            }
+            .descPrec{
+                grid-area: dp;
+                font-size: 1.5vw;
+                font-weight: bold;
+                color: #0d6efd;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .descCount{
+                grid-area: dc;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .buttons{
+                    width: 50%;
+                    height: 90%;
+                    display: grid;
+                    grid-template-columns: 25% 50% 25%;
+                    grid-template-rows: 50% 50%;
+                    grid-template-areas: 
+                        "mi co pl"
+                        "mi ad pl";
+                    .minus{
+                        grid-area: mi;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        .butMin{
+                            width: 60%;
+                            height: 60%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: xx-large;
+                        }
+                    }
+                    .count{
+                        grid-area: co;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    .add{
+                        grid-area: ad;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        .butAdd{
+                            width: 90%;
+                            height: 90%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+                    .plus{
+                        grid-area: pl;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        .butPlu{
+                            width: 60%;
+                            height: 60%;
+                            font-size: xx-large;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
 
+                        }
+                    }
+                }
+            }
+            .descStock{
+                grid-area: ds;
+                font-size: 1vw;
+                color: #0d6efd;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .descRet{
+                grid-area: dr;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
         }
-        .descPrec{
-            grid-area: dp;
-            border: green solid 1px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .descCount{
-            grid-area: dc;
-            border: green solid 1px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .descStock{
-            grid-area: ds;
-            border: green solid 1px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .descRet{
-            grid-area: dr;
-            border: green solid 1px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .descInfo{
-            grid-area: din;
-            border: green solid 1px;
-            tbody{
-                font-size: 2vh;
-                tr {
-                    td{
-                        border-bottom: blue solid 1px;
-                        width: 17.5vw;
-                        
+        #divDesc2{
+            grid-area: dd2;
+            border-left: #0d6efd solid 0.75vh;
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 4% 96%;
+            grid-template-areas: 
+                "ddti"
+                "ddta";
+            #divDescTit{
+                grid-area: ddti;
+                font-weight: bolder;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #divDescTab{
+                grid-area: ddta;
+                table{
+                    width: 96%;
+                    margin-left: 2%;
+                    margin-right: 2%;
+                    margin-top: 1%;
+                    tbody{
+                        tr{
+                            border-bottom: rgba(0,0,0,.125) dashed 0.5px;
+                            td{
+                                width: 50%;
+                                font-size: 1.7vh;
+                            }
+                        }
                     }
                 }
             }
         }
-
     }
 }

@@ -1,0 +1,37 @@
+import React from 'react'
+import { getFetch2 } from '../../Products/getFetch'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router'
+
+const ItemDesc = () => {
+    const [info, setInfo] = useState([])
+    const {ID} = useParams()
+
+    useEffect(()=>{
+        getFetch2
+        .then( res => 
+            setInfo((Object.values(res.find (data1 => data1.id === parseInt(ID))))[1]))
+        .catch()
+        .finally()        
+    },[ID])
+    console.log(info)
+
+
+    return (
+        <table> 
+            { info.map( produ => 
+                <tbody key={produ.id}>
+                    <tr >
+                        <td>{produ.desc1}</td>
+
+                        <td>{produ.desc2}</td>
+                    </tr>
+                </tbody>
+            )}
+            
+        </table> 
+    )
+}
+
+export default ItemDesc
+

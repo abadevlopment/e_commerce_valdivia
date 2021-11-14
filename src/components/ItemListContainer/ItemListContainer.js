@@ -1,36 +1,48 @@
 import { useEffect, useState } from 'react';
-import ItemCount from '../ItemCount/ItemCount';
 import { getFetch } from '../Products/getFetch';
+import { useParams } from 'react-router';
 import ItemList from './ItemList/ItemList';
-import loadingArrow from './loadingArrow.png'
 import './ItemListContainer.scss'
 
 
 function ItemListContainer ({greeting}) {
     const [product, setProduct] = useState([])
     const [loading, setLoading] = useState(true)
+    const {categoryID} = useParams()
 
     useEffect(()=>{
-        getFetch
-        .then( res => {
-            setProduct(res)
-        })
-        .catch()
-        .finally( () => setLoading(false) )        
-    },[])
+        if (categoryID) {
+            getFetch
+            .then( res => {
+                setProduct(res.filter((data) => data.category === categoryID))
+            })
+            .catch()
+            .finally( () => setLoading(false) )
+        } else {
+            getFetch
+            .then( res => {
+                setProduct(res)
+            })
+            .catch()
+            .finally( () => setLoading(false) )
+        }
+
+    },[categoryID])
 
     return (
         <section className="ilc" id="main">
-            <div id="greet" ><h1>{greeting="Bienvenido a ELECT-COMMERCE, tu tienda de electronica de confianza"}</h1></div>
+            <div id="greet" ><h1>{greeting}</h1></div>
             <div id="catalog" >
-                { loading ? <img src={loadingArrow} className="App-logo" alt="logo" /> :
-                            <ItemList items= {product} />}
-                
-            </div>
-            <div id="extra" >
-                <ItemCount initial={1} stock={5} />
-            </div>
-            
+                { loading ? 
+                <>
+                    <div className="btn btn-primary" >
+                        <span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                        <span className="sr-only">Cargando...</span>
+                    </div>
+                </>
+                :
+                 <ItemList items= {product} />}                
+            </div>   
         </section>
     )
 }
