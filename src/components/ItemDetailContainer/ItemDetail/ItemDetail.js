@@ -37,7 +37,7 @@ const ItemDetail = ({itemDet, itemDesc}) => {
                 </div>
                 <div id="divDesc2" >
                     <div id='divDescTit'>
-                        DESCRIPCION / CONTENIDO
+                        ESPECIFICACIONES TECNICAS / CONTENIDO
                     </div>
                     <div id='divDescTab'>
                         <table> 
