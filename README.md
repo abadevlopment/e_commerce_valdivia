@@ -18,7 +18,7 @@ Para inicializar el proyecto, en el directorio del poryecto ingresar:
   * ItemList - Se renderiza el arreglo de productos a travez del componente Item
   * Item
 * ItemDetailContainer - Contenedor del detalle del producto seleccionado se renderiza el componente ItemDetail
-  *ItemDetail - Serenderiza el arreglo del producto seleccionado 
+  * ItemDetail - Serenderiza el arreglo del producto seleccionado 
 * CartWidget - Por implementar
 
 #### POR IMPLEMENTAR
