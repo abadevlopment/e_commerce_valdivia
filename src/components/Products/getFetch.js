@@ -1,5 +1,5 @@
 const products = [
-    { id: 1, title: "Arduino DUE Original", category: "Tarjetas", price: 190 , stock: 25 , pictureUrl: "https://res.cloudinary.com/dvinxey2w/image/upload/v1636743443/ARDUINO/due_gpuzzq.jpg" } , 
+    { id: 1, title: "Arduino DUE Original", category: "Tarjetas", price: 190 , stock: 0 , pictureUrl: "https://res.cloudinary.com/dvinxey2w/image/upload/v1636743443/ARDUINO/due_gpuzzq.jpg" } , 
     { id: 2, title: "Arduino M0", category: "Tarjetas", price: 149 , stock: 25 , pictureUrl: "https://res.cloudinary.com/dvinxey2w/image/upload/v1636743498/ARDUINO/arduinoM0_tpjpml.jpg" } , 
     { id: 3, title: "Arduino Mega R3 Original", category: "Tarjetas", price: 175 , stock: 25 , pictureUrl: "https://res.cloudinary.com/dvinxey2w/image/upload/v1636743546/ARDUINO/ArduinoMegaOriginal_bao6zm.jpg" } , 
     { id: 4, title: "Arduino Micro", category: "Tarjetas", price: 110 , stock: 25 , pictureUrl: "https://res.cloudinary.com/dvinxey2w/image/upload/v1636743585/ARDUINO/ArduinoMicro_eufjcp.jpg" } , 
@@ -21,9 +21,6 @@ const products = [
     { id: 20, title: "Garra robotica", category: "Robotica", price: 25 , stock: 15 , pictureUrl: "https://res.cloudinary.com/dvinxey2w/image/upload/v1636653143/ARDUINO/garrarobotica_i87sv9.jpg" } , 
     { id: 21, title: "Hexapod Chassis Kit", category: "Robotica", price: 299 , stock: 15 , pictureUrl: "https://res.cloudinary.com/dvinxey2w/image/upload/v1636653324/ARDUINO/spider_h4h7fq.jpg" } 
 ]
-
-
-
 
 
 const desc = [

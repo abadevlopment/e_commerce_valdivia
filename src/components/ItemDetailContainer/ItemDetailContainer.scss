@@ -61,61 +61,102 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                .anuncio{
+                    width: 80%;
+                    height: 90%;
+                    color: red;
+                    font-weight: bolder;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
                 .buttons{
-                    width: 50%;
+                    width: 80%;
                     height: 90%;
                     display: grid;
-                    grid-template-columns: 25% 50% 25%;
-                    grid-template-rows: 50% 50%;
+                    grid-template-columns: 50% 50%;
+                    grid-template-rows: 100%;
                     grid-template-areas: 
-                        "mi co pl"
-                        "mi ad pl";
-                    .minus{
-                        grid-area: mi;
+                        "c1 c2";
+                    .cont1{
+                        grid-area: c1;
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        .butMin{
-                            width: 60%;
-                            height: 60%;
+                        font-size: large;
+                    }
+                    .cont2{
+                        grid-area: c1;
+                        display: grid;
+                        grid-template-columns: 25% 50% 25%;
+                        grid-template-rows: 100%;
+                        grid-template-areas: 
+                            "b1 b2 b3";
+                        .minus{
+                            grid-area: b1;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            .butMin{
+                                height: 70%;
+                                width: 70%;
+                                font-size: xx-large;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                background-color: #21bd74;
+                                font-weight: bolder;
+                                color: white;
+                            }
+                        }
+                        .count{
+                            grid-area: b2;
                             display: flex;
                             align-items: center;
                             justify-content: center;
                             font-size: xx-large;
                         }
+                        .plus{
+                            grid-area: b3;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            .butPlu{
+                                height: 70%;
+                                width: 70%;
+                                font-size: xx-large;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                background-color: #21bd74;
+                                font-weight: bolder;
+                                color: white;
+                            }
+                        }
                     }
-                    .count{
-                        grid-area: co;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                    .add{
-                        grid-area: ad;
+                    .cont3{
+                        grid-area: c2;
                         display: flex;
                         align-items: center;
                         justify-content: center;
                         .butAdd{
-                            width: 90%;
-                            height: 90%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
+                            height: 70%;
+                            width: 70%;
+                            background-color: #21bd74;
+                            font-weight: bolder;
+                            color: white;
                         }
-                    }
-                    .plus{
-                        grid-area: pl;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        .butPlu{
-                            width: 60%;
-                            height: 60%;
-                            font-size: xx-large;
+                        .butAdd2{
+                            height: 70%;
+                            width: 90%;
+                            background-color: #21bd74;
+                            border: black solid 1px;                            
                             display: flex;
                             align-items: center;
                             justify-content: center;
-
+                            text-decoration: none;
+                            font-weight: bolder;
+                            color: white;
                         }
                     }
                 }

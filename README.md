@@ -19,7 +19,9 @@ Para inicializar el proyecto, en el directorio del poryecto ingresar:
   * Item
 * ItemDetailContainer - Contenedor del detalle del producto seleccionado se renderiza el componente ItemDetail
   * ItemDetail - Serenderiza el arreglo del producto seleccionado 
+    * ItemCount - Controla el número de items a agregar
 * CartWidget - Por implementar
+* Cart - Por implementar
 
 #### POR IMPLEMENTAR
 

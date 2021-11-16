@@ -1,7 +1,15 @@
 import React from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import ItemCount from '../../ItemCount/ItemCount'
+
 
 const ItemDetail = ({itemDet, itemDesc}) => {
+    const [receivedAdd, setReceivedAdd] = useState()
+    const sendAdd = (setCount) => {
+        setReceivedAdd(setCount)
+    }
+    console.log( 'Se agrego al carrito ' + receivedAdd + ' und.');
   
     return (
         <>
@@ -11,20 +19,7 @@ const ItemDetail = ({itemDet, itemDesc}) => {
                     <div className="descImg" > <img src={itemDet.pictureUrl} className="descImagen" alt="imagen producto"/> </div>
                     <div className="descPrec" > Precio: S/. {itemDet.price}.00 </div>
                     <div className="descCount" >
-                        <div className='buttons' >
-                            <div className='minus' >
-                                <button className='butMin' >-</button>
-                            </div>
-                            <div className='count' >
-                                1
-                            </div>
-                            <div className='add' >
-                                <button className='butAdd' >AGREGAR</button>
-                            </div>
-                            <div className='plus' >
-                                <button className='butPlu' >+</button>
-                            </div>
-                        </div>
+                        < ItemCount stock = {itemDet.stock} initial = {1} onAdd={sendAdd}  />
                     </div>
                     <div className="descStock" > Stock: {itemDet.stock} und. </div>
                     <div className="descRet" > 
