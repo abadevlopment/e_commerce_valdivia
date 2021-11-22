@@ -1,15 +1,22 @@
 import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useCartContext } from '../../../Context/CartContext'
 import ItemCount from '../../ItemCount/ItemCount'
 
 
 const ItemDetail = ({itemDet, itemDesc}) => {
     const [receivedAdd, setReceivedAdd] = useState()
+
+    const {cartList, AddtoCart} = useCartContext()
+
     const sendAdd = (setCount) => {
         setReceivedAdd(setCount)
+        AddtoCart(itemDet,setCount)
     }
     console.log( 'Se agrego al carrito ' + receivedAdd + ' und.');
+    console.log(cartList);
+
   
     return (
         <>

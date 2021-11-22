@@ -1,0 +1,19 @@
+#cart{
+    margin-top: 8vh;
+    #titulo_cart{
+        height: 8vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #table_cart{
+        width: 65%;
+        margin-left: 5%;
+    }
+    #botones_cart{
+        height: 8vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
