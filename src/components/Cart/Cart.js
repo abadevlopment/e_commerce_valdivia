@@ -29,7 +29,7 @@ const Cart = () => {
                             <td> S/. {prod.price}.00 </td>
                             <td> {prod.qty} </td>
                             <td> S/. {(prod.price)*(prod.qty)}.00 </td>
-                            <td> <button onClick={() => removeItem(prod.id) } type="button" class="btn btn-danger">X</button> </td>
+                            <td> <button onClick={() => removeItem(prod.id) } type="button" className="btn btn-danger">X</button> </td>
                         </tr>
                     </tbody>    
                     ) }
@@ -37,7 +37,7 @@ const Cart = () => {
             </div>
 
             <div id='botones_cart' >
-                <button onClick={clearCart}  type="button" class="btn btn-danger">Borrar Productos</button>
+                <button onClick={clearCart}  type="button" className="btn btn-danger">Borrar Productos</button>
             </div>
 
         </section>
