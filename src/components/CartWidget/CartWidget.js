@@ -1,14 +1,39 @@
 import Cart from './Cart.png'
+import { Link } from 'react-router-dom';
+import {  useCartContext } from '../../Context/CartContext'
+import { useState, useEffect } from 'react';
 
 function CartWidget() {
+    const {cartList} = useCartContext()
+
+    const [wCount, setWCount] = useState(0)
+
+    useEffect( () => {
+        const handleWcount = () => {
+            const Total = cartList.map( (sbt) => (sbt.qty))
+            .reduce((previous, current) => {
+                return previous + current;
+            },0)
+            setWCount(Total)
+        }
+        handleWcount()
+
+    } )
+        // { () ?  true : false   }
     return (
-        <div style={{marginRight: '2vw'}} className="dropdown">
-            <button style={{backgroundColor: 'white'}} className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                <img style={ {height: '4vh'} } src={Cart} className="Cart-logo" alt="Cart" />
-            </button>
-            <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-            </ul>
-        </div>
+        <>
+            {(cartList.length > 0) ?
+                <Link to='/cart'>
+                    <button style={{backgroundColor: 'white'}} className="btn btn-secondary " type="button" >
+                    <img style={ {height: '4vh'} } src={Cart} className="Cart-logo" alt="Cart" />
+                    <span style={{color: 'black'}} >{wCount}</span>
+                    </button>
+                </Link>
+            :
+                <>
+                </>
+            }
+        </> 
     );
 }
   export default CartWidget

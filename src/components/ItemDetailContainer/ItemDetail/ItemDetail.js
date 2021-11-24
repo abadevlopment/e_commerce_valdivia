@@ -7,7 +7,6 @@ import ItemCount from '../../ItemCount/ItemCount'
 
 const ItemDetail = ({itemDet, itemDesc}) => {
     const [receivedAdd, setReceivedAdd] = useState()
-
     const {cartList, AddtoCart} = useCartContext()
 
     const sendAdd = (setCount) => {
@@ -16,7 +15,6 @@ const ItemDetail = ({itemDet, itemDesc}) => {
     }
     console.log( 'Se agrego al carrito ' + receivedAdd + ' und.');
     console.log(cartList);
-
   
     return (
         <>

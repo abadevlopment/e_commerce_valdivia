@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
         .catch()
         .finally( () => setLoading(false) )        
     },[ID])
-    console.log(producto)
+    //console.log(producto)
 
     useEffect(()=>{
         getFetch2
@@ -27,7 +27,7 @@ const ItemDetailContainer = () => {
         .catch()
         .finally( () => setLoading(false) )        
     },[ID])
-    console.log(info)
+    //console.log(info)
 
     return (
         

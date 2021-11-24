@@ -38,9 +38,9 @@ function ItemCount({stock, initial, onAdd}) {
                 { switchButton ?
                     <div className='cont1'>
                         { (count === 1) ?
-                            <span>AGREGASTE {count} PRODUCTO</span>
+                            <span>{count} PRODUCTO AGREGADO</span>
                         :
-                            <span>AGREGASTE {count} PRODUCTOS</span>
+                            <span>{count} PRODUCTOS AGREGADOS</span>
                         }
                     </div>
                 :  
@@ -58,9 +58,19 @@ function ItemCount({stock, initial, onAdd}) {
                 }
                 <div className='cont3' >
                     { switchButton ?
-                        <Link className='butAdd2' to='/cart'>
-                            TERMINAR COMPRA
-                        </Link>
+                        
+                        <div className="btn-group" role="group" aria-label="Basic example">
+                            <Link to='/cart'>
+                                <button type="button" className="btn btn-success">
+                                    IR AL CARRITO
+                                </button>
+                            </Link>
+                            <Link to='/'>
+                                <button type="button" className="btn btn-primary">
+                                    CONTINUAR COMPRANDO
+                                </button>
+                            </Link>
+                        </div>
                     :  
                         <button className='butAdd' onClick={() => {onAdd(count) ; addProducto()}} >AGREGAR</button>
                     }

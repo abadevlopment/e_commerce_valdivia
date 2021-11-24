@@ -17,6 +17,7 @@ const CartContextProvider = ({children}) => {
 
     const AddtoCart = (itemtoAdd, qty) => {
 
+
         if(isInCart(itemtoAdd)){
             const newCart = cartList
             newCart.forEach( (data) => {
