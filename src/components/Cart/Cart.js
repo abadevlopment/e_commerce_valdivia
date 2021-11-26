@@ -1,27 +1,13 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
 import {  useCartContext } from '../../Context/CartContext'
 import { Link } from 'react-router-dom'
 import './Cart.scss'
 
 
 const Cart = () => {
-    const {cartList, clearCart, removeItem} = useCartContext()
+    const {cartList, subtotal, wCount, clearCart, removeItem} = useCartContext()
     
-    const [subtotal, setSubtotal] = useState(0)
 
-    useEffect( () => {
-        const handleTotal = () => {
-            const Total = cartList.map( (sbt) => ((sbt.price )*(sbt.qty)))
-            .reduce((previous, current) => {
-                return previous + current;
-            },0  )
-            setSubtotal(Total)
-        }
-        handleTotal()
-
-    } )
-    console.log(cartList);
 
         // { () ?  true : false   }
     return (
@@ -55,7 +41,8 @@ const Cart = () => {
                 ) }
                 <thead>
                     <tr>
-                        <th scope='col' colSpan='2' ></th>
+                        <th scope='col' >PRODUCTOS :</th>
+                        <th scope='col' > {wCount} </th>
                         <th scope='col' >TOTAL :</th>
                         <th scope='col' >S/. {subtotal}.00</th>
                         <th scope='col' ></th>

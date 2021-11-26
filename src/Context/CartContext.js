@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import  { useState, useEffect } from "react";
 import { createContext, useContext } from "react";
 
 export const CartContext = createContext([]) 
@@ -8,15 +8,15 @@ export const useCartContext = () => {
 }
 
 const CartContextProvider = ({children}) => {
-
     const [cartList, setCartList] = useState([])
+    const [wCount, setWCount] = useState(0)
+    const [subtotal, setSubtotal] = useState(0)
 
     const isInCart = (item) => {
         return cartList.some(data => data.id === item.id)
     }
 
     const AddtoCart = (itemtoAdd, qty) => {
-
 
         if(isInCart(itemtoAdd)){
             const newCart = cartList
@@ -26,12 +26,47 @@ const CartContextProvider = ({children}) => {
                 }}
             )
             setCartList(newCart)
+
+            const Total = newCart.map( (cnt) => (cnt.qty))
+            .reduce((previous, current) => {
+                return previous + current;
+            },0)
+            setWCount(Total)
+            
+            const Total2 = newCart.map( (sbt) => ((sbt.price )*(sbt.qty)))
+            .reduce((previous, current) => {
+                return previous + current;
+            },0)
+            setSubtotal(Total2)
+
         }
         else{
             setCartList([...cartList , {...itemtoAdd, qty}])
         }
-        
     }
+
+    useEffect( () => {
+        const handleWcount = () => {
+            const Total = cartList.map( (cnt) => (cnt.qty))
+            .reduce((previous, current) => {
+                return previous + current;
+            },0)
+            setWCount(Total)
+        }
+        handleWcount()
+    })
+
+    useEffect( () => {
+        const handleTotal = () => {
+            const Total2 = cartList.map( (sbt) => ((sbt.price )*(sbt.qty)))
+            .reduce((previous, current) => {
+                return previous + current;
+            },0)
+            setSubtotal(Total2)
+        }
+        handleTotal()
+    })
+
 
     const removeItem = (itemId) => {
         setCartList( 
@@ -47,6 +82,8 @@ const CartContextProvider = ({children}) => {
         <div>
             <CartContext.Provider value ={{
                 cartList,
+                subtotal,
+                wCount,
                 AddtoCart,
                 removeItem,
                 clearCart
