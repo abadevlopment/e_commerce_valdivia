@@ -1,14 +1,11 @@
 import React from 'react'
-import {  useCartContext } from '../../Context/CartContext'
+import {  useCartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
 import './Cart.scss'
 
 
 const Cart = () => {
     const {cartList, subtotal, wCount, clearCart, removeItem} = useCartContext()
-    
-
-
         // { () ?  true : false   }
     return (
         <section id='cart'>

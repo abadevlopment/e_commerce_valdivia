@@ -1,33 +1,27 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
-import { getFetch, getFetch2 } from '../Products/getFetch';
+//import { getFetch, getFetch2 } from '../Products/getFetch';
 import ItemDetail from './ItemDetail/ItemDetail';
 import './ItemDetailContainer.scss'
 import { useParams } from 'react-router';
+import { getFirestore } from '../../service/getFirestore';
 
 const ItemDetailContainer = () => {
     const [producto, setProducto] = useState({})
     const [loading, setLoading] = useState(true)
-    const [info, setInfo] = useState([])
     const {ID} = useParams()
 
     useEffect(()=>{
-        getFetch
-        .then( res => 
-            setProducto(res.find (data => data.id === parseInt(ID))))
-        .catch()
-        .finally( () => setLoading(false) )        
-    },[ID])
-    //console.log(producto)
+        const dbQuery = getFirestore()
 
-    useEffect(()=>{
-        getFetch2
-        .then( res => 
-            setInfo((Object.values(res.find (data1 => data1.id === parseInt(ID))))[1]))
-        .catch()
-        .finally( () => setLoading(false) )        
+        dbQuery.collection('products').doc(ID).get() //traer uno por id
+        .then(res => setProducto( { id: res.id, ...res.data() } ))
+        .catch(err => console.log(err))
+        .finally(setLoading(false))
+
     },[ID])
-    //console.log(info)
+
+    //console.log(producto)
 
     return (
         
@@ -40,7 +34,7 @@ const ItemDetailContainer = () => {
                     </div>
                 </>
                 :
-            <ItemDetail itemDet={producto} itemDesc={info} />}
+            <ItemDetail itemDet={producto} />}
         </section>
     )
 }

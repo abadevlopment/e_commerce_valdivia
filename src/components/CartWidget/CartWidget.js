@@ -1,6 +1,6 @@
 import Cart from './Cart.png'
 import { Link } from 'react-router-dom';
-import {  useCartContext } from '../../Context/CartContext'
+import {  useCartContext } from '../../context/CartContext'
 
 function CartWidget() {
     const {cartList, wCount} = useCartContext()

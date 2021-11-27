@@ -1,11 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useCartContext } from '../../../Context/CartContext'
+import { useCartContext } from '../../../context/CartContext'
 import ItemCount from '../../ItemCount/ItemCount'
 
 
-const ItemDetail = ({itemDet, itemDesc}) => {
+const ItemDetail = ({itemDet}) => {
     const [receivedAdd, setReceivedAdd] = useState()
     const {cartList, AddtoCart} = useCartContext()
 
@@ -15,6 +15,7 @@ const ItemDetail = ({itemDet, itemDesc}) => {
     }
     console.log( 'Se agrego al carrito ' + receivedAdd + ' und.');
     console.log(cartList);
+    console.log(itemDet);
   
     return (
         <>
@@ -40,16 +41,9 @@ const ItemDetail = ({itemDet, itemDesc}) => {
                         ESPECIFICACIONES TECNICAS / CONTENIDO
                     </div>
                     <div id='divDescTab'>
-                        <table> 
-                            { itemDesc.map( produ => 
-                                <tbody key={produ.id}>
-                                    <tr >
-                                        <td>{produ.desc1}</td>
-                                        <td>{produ.desc2}</td>
-                                    </tr>
-                                </tbody>
-                            )}
-                        </table>
+                        <p>
+                            {itemDet.description}
+                        </p>
                     </div>
                 </div>
             </div>
