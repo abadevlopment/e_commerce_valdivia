@@ -9,8 +9,8 @@ export const useCartContext = () => {
 
 const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
-    const [wCount, setWCount] = useState(0)
-    const [subtotal, setSubtotal] = useState(0)
+    const [itCount, setItCount] = useState(0)
+    const [total, setTotal] = useState(0)
 
     const isInCart = (item) => {
         return cartList.some(data => data.id === item.id)
@@ -27,17 +27,17 @@ const CartContextProvider = ({children}) => {
             )
             setCartList(newCart)
 
-            const Total = newCart.map( (cnt) => (cnt.qty))
+            const iCount = newCart.map( (cnt) => (cnt.qty))
             .reduce((previous, current) => {
                 return previous + current;
             },0)
-            setWCount(Total)
+            setItCount(iCount)
             
             const Total2 = newCart.map( (sbt) => ((sbt.price )*(sbt.qty)))
             .reduce((previous, current) => {
                 return previous + current;
             },0)
-            setSubtotal(Total2)
+            setTotal(Total2)
 
         }
         else{
@@ -47,11 +47,11 @@ const CartContextProvider = ({children}) => {
 
     useEffect( () => {
         const handleWcount = () => {
-            const Total = cartList.map( (cnt) => (cnt.qty))
+            const iCount = cartList.map( (cnt) => (cnt.qty))
             .reduce((previous, current) => {
                 return previous + current;
             },0)
-            setWCount(Total)
+            setItCount(iCount)
         }
         handleWcount()
     })
@@ -62,7 +62,7 @@ const CartContextProvider = ({children}) => {
             .reduce((previous, current) => {
                 return previous + current;
             },0)
-            setSubtotal(Total2)
+            setTotal(Total2)
         }
         handleTotal()
     })
@@ -82,8 +82,8 @@ const CartContextProvider = ({children}) => {
         <div>
             <CartContext.Provider value ={{
                 cartList,
-                subtotal,
-                wCount,
+                total,
+                itCount,
                 AddtoCart,
                 removeItem,
                 clearCart
