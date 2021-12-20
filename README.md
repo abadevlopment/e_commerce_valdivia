@@ -56,7 +56,7 @@ Para inicializar el proyecto, en el directorio del poryecto ingresar:
 
 ## PREVIEW
 
-![Preview App](https://jolly-elion-891149.netlify.app/)
+[https://jolly-elion-891149.netlify.app/](https://jolly-elion-891149.netlify.app/)
 ![Preview App](https://res.cloudinary.com/dvinxey2w/image/upload/v1639955833/Proyecto%20final/Preview_App_an8xy7.png)
 
 #### NOTAS
