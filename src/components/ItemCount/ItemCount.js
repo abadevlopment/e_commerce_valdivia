@@ -1,92 +1,35 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom'
 
 function ItemCount({stock, initial, onAdd}) {
     const [count, setCount] = useState(initial)
-    const [switchButton, setSwitchButton] = useState(false)
-    const sumItem = () => {
-        // { () ?  true : false   }
-        if (stock > 0) {
-            if (count < stock ) {
-                setCount(count + 1)
-            } 
-            else {
-                alert(`Stock maximo ${count}`)
-            }
-        }
-        else {
+
+    const addItem = () => {
+        (stock > 0) ?
+            <>
+                {(count < stock) ?
+                    setCount(count + 1)
+                :
+                    alert(`Stock maximo ${count}`)}
+            </>
+        :
             alert(`Stock no disponible`)
-        }
     }
-    const resItem = () => {
+    const reduItem = () => {
         if(count > initial && count <= stock && stock > 0) {
             setCount(count - 1)
         }
     }
-    const addProducto = () => {
-        if (stock > 0) {    
-            setSwitchButton(true)
-        }
-        else {
-            alert(`Stock no disponible`)
-        }
-    }
-
-    const Buttons = () => {
-        return(
-            <div className='buttons' >
-                { switchButton ?
-                    <div className='cont1'>
-                        { (count === 1) ?
-                            <span>{count} PRODUCTO AGREGADO</span>
-                        :
-                            <span>{count} PRODUCTOS AGREGADOS</span>
-                        }
-                    </div>
-                :  
-                    <div className='cont2'>
-                        <div className='minus' >
-                            <button className='butMin' onClick={resItem} >-</button>
-                        </div>
-                        <div className='count' >
-                            {count}
-                        </div>
-                        <div className='plus' >
-                            <button className='butPlu' onClick={sumItem} >+</button>
-                        </div>
-                    </div>
-                }
-                <div className='cont3' >
-                    { switchButton ?
-                        
-                        <div className="btn-group" role="group" aria-label="Basic example">
-                            <Link to='/cart'>
-                                <button type="button" className="btn btn-success">
-                                    IR AL CARRITO
-                                </button>
-                            </Link>
-                            <Link to='/'>
-                                <button type="button" className="btn btn-primary">
-                                    CONTINUAR COMPRANDO
-                                </button>
-                            </Link>
-                        </div>
-                    :  
-                        <button className='butAdd' onClick={() => {onAdd(count) ; addProducto()}} >AGREGAR</button>
-                    }
-                </div>
-            </div>
-        )
-    }
 
     return (
-        <>
-        {(stock >0) ?
-            <Buttons/>
-        :
-            <div className='anuncio' >STOCK NO DISPONIBLE</div>    
-        }
-        </>
+        <div className="btn-group" role="group" >
+            <button type="button" className="btn btn-outline-success btn-sm fw-bolder fs-5" onClick={reduItem} >-</button>
+            <button type="button" className="btn btn-outline-success btn-sm fw-bolder fs-5" disabled>{count}</button>
+            <button type="button" className="btn btn-outline-success btn-sm fw-bolder fs-5" onClick={addItem} >+</button>
+            <button type="button" className="btn btn-outline-light btn-sm " disabled ></button>
+            <button type="button" className="btn btn-outline-success btn-sm " onClick={() => {onAdd(count)}} >
+                <img src='https://res.cloudinary.com/dvinxey2w/image/upload/v1639369765/ICONOS/carrito_mas2_nmt7nj.png' alt='cart-icon' />
+            </button>
+        </div>
     )
 }
 

@@ -1,87 +1,69 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { useCartContext } from '../../Context/CartContext'
 
-function CartSummary({data}) {
-    console.log(data);
-    const buyer = data.buyer
-    const items = data.items
-    //console.log(buyer);
-    //console.log(items);
+function CartSummary() {
+    const {cartList, total, itCount, clearCart, removeItem} = useCartContext()
 
     return (
-        <section className='cartSummary'>
-            <table className="table table-striped ">
-                <thead>
-                    <tr>
-                    <th scope="col" colSpan='4'><h1>CONFIRMACION DE COMPRA</h1></th>
-                    </tr>
-                    <tr>
-                        <th scope="col">CODIGO DEL PEDIDO:</th>
-                        <th scope="col" style={{color: '#0d6efd'}} >{data.id}</th>
-                        <th scope="col">Fecha del pedido:</th>
-                        <th scope="col"></th>
-                    </tr>
-                    <tr>
-                        <th scope='col' colSpan='4' ><h2>DATOS DEL CLIENTE</h2></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope='row' colSpan='4'><h2>PRODUCTOS</h2></th>
-                    </tr>
-                    <tr>
-                        <td>Nombre:</td>
-                        <td colSpan='3' >{buyer.iBuyer.name}</td>
-                    </tr>
-                    <tr>
-                        <td>Correo Electrónico:</td>
-                        <td colSpan='3' >{buyer.iBuyer.email}</td>
-                    </tr>
-                    <tr>
-                        <td>Teléfono:</td>
-                        <td colSpan='3' >{buyer.iBuyer.phone}</td>
-                    </tr>
-                </tbody>
-                <thead>
-                    <tr>
-                        <th scope="col">Producto</th>
-                        <th scope="col">Precio Unitario</th>
-                        <th scope="col">Cantidad</th>
-                        <th scope="col">Sub Total</th>
-                    </tr>
-                </thead>
-            {items.map(data =>
-                <tbody key={data.id}>
-                    <tr>
-                        <td>{data.title}</td>
-                        <td>S/. {data.price}.00</td>
-                        <td>{data.qty}</td>
-                        <td>S/. {(data.qty)*(data.price)}.00</td>
-                    </tr>
-                </tbody> 
-                   
-            )}
-                <thead>
-                    <tr>
-                        <th scope="col">ITEMS:</th>
-                        <th scope="col">{data.itCount}</th>
-                        <th scope="col">TOTAL:</th>
-                        <th scope="col">S/. {data.total}.00</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td  colSpan='2'>
-                            <Link to='/'>
-                                <button type="button" class="btn btn-primary">SALIR</button>
-                            </Link>
-                        </td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+        <>
+            <thead>
+                <tr>
+                    <th scope='col' colSpan='5'><h3 >CARRITO DE COMPRAS</h3></th>
+                </tr>
+            </thead>
+            <thead>
+                <tr>
+                    <th scope='col'>Producto</th>
+                    <th scope='col'>Precio Unitario</th>
+                    <th scope='col'>Cantidad</th>
+                    <th scope='col'>SubTotal</th>
+                    <th scope='col'></th>
+                </tr>
+            </thead>
+            { cartList.map (prod =>
+            <tbody className='align-middle' key={prod.id}>
+                <tr>
+                    <td>
+                        <Link to={`/detail/${prod.id}`} >
+                            {prod.title}
+                        </Link>
+                    </td>
+                    <td> S/. {prod.price}.00 </td>
+                    <td> {prod.qty} </td>
+                    <td> S/. {(prod.price)*(prod.qty)}.00 </td>
+                    <td>
+                        <button onClick={() => removeItem(prod.id) } type='button' className='btn btn-outline-danger'>
+                            <img src='https://res.cloudinary.com/dvinxey2w/image/upload/v1639369765/ICONOS/carrito_menos2_mci4g7.png' alt='cart-icon' />
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+            ) }
+            <thead>
+                <tr>
+                    <th scope='col' >
+                        <Link to='/' type='button' className='btn btn-primary fw-bolder fs-6'>
+                            AGREGAR MAS PRODUCTOS
+                        </Link>
+                    </th>
+                    <th scope='col' colSpan='3' ></th>
+                    <th scope='col'  >
+                        <button onClick={clearCart}  type='button' className='btn btn-outline-danger'>
+                            <img src='https://res.cloudinary.com/dvinxey2w/image/upload/v1639368037/ICONOS/borrar2_wtujuq.png' alt='delete' />
+                        </button>
+                    </th>
+                </tr>
+            </thead>
+            <thead>
+                <tr>
+                    <th scope='col' colSpan='3' >TOTAL A PAGAR: S/.{total}.00 </th>
+                </tr>
+                <tr>
+                    <th scope='col' colSpan='3' >ARTICULOS: {itCount} </th>
+                </tr>
+            </thead>
+        </>
     )
 }
 

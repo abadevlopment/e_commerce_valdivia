@@ -1,216 +1,50 @@
-#extra2 {
-    margin-top: 8vh;
-    width: 100%;
-    height: 91vh;
+.main-catalog{
+    height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    #divDesc{
-        width: 80%;
-        height: 95%;
-        border: #0d6efd solid 0.75vh;
-        display: grid;
-        grid-template-columns: 50% 50% ;
-        grid-template-rows: 100%;
-        grid-template-areas: 
-            "dd1 dd2";
-        #divDesc1{
-            grid-area: dd1;
-            display: grid;
-            grid-template-columns: 100%;
-            grid-template-rows: 8% 58% 7% 13% 7% 7%;
-            grid-template-areas: 
-                "dt"
-                "di"
-                "dp"
-                "dc"
-                "ds"
-                "dr";
-            .descTit{
-                grid-area: dt;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 2vw;
-                font-weight: bolder;
-            }
-            .descImg{
-                grid-area: di;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                .descImagen{
+    #cardDesc1{
+        height: 90%;
+        width: 30%;
+        .card-header{
+            height: 10%;
+            color: #0d6efd;
+        }
+        .card-body{
+            height: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+                .card-img-top{
                     max-height: 100%;
                     width: auto;
                 }
-            }
-            .descPrec{
-                grid-area: dp;
-                font-size: 1.5vw;
-                font-weight: bold;
-                color: #0d6efd;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .descCount{
-                grid-area: dc;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                .anuncio{
-                    width: 80%;
-                    height: 90%;
-                    color: red;
-                    font-weight: bolder;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-                .buttons{
-                    width: 80%;
-                    height: 90%;
-                    display: grid;
-                    grid-template-columns: 50% 50%;
-                    grid-template-rows: 100%;
-                    grid-template-areas: 
-                        "c1 c2";
-                    .cont1{
-                        grid-area: c1;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-size: large;
-                    }
-                    .cont2{
-                        grid-area: c1;
-                        display: grid;
-                        grid-template-columns: 25% 50% 25%;
-                        grid-template-rows: 100%;
-                        grid-template-areas: 
-                            "b1 b2 b3";
-                        .minus{
-                            grid-area: b1;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            .butMin{
-                                height: 70%;
-                                width: 70%;
-                                font-size: xx-large;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                background-color: #21bd74;
-                                font-weight: bolder;
-                                color: white;
-                            }
-                        }
-                        .count{
-                            grid-area: b2;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            font-size: xx-large;
-                        }
-                        .plus{
-                            grid-area: b3;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            .butPlu{
-                                height: 70%;
-                                width: 70%;
-                                font-size: xx-large;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                background-color: #21bd74;
-                                font-weight: bolder;
-                                color: white;
-                            }
-                        }
-                    }
-                    .cont3{
-                        grid-area: c2;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        .butAdd{
-                            height: 70%;
-                            width: 70%;
-                            background-color: #21bd74;
-                            font-weight: bolder;
-                            color: white;
-                        }
-                        .butAdd2{
-                            height: 70%;
-                            width: 90%;
-                            background-color: #21bd74;
-                            border: black solid 1px;                            
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            text-decoration: none;
-                            font-weight: bolder;
-                            color: white;
-                        }
-                    }
-                }
-            }
-            .descStock{
-                grid-area: ds;
-                font-size: 1vw;
-                color: #0d6efd;
-                font-weight: bold;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .descRet{
-                grid-area: dr;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
         }
-        #divDesc2{
-            grid-area: dd2;
-            border-left: #0d6efd solid 0.75vh;
-            display: grid;
-            grid-template-columns: 100%;
-            grid-template-rows: 4% 96%;
-            grid-template-areas: 
-                "ddti"
-                "ddta";
-            #divDescTit{
-                grid-area: ddti;
-                font-weight: bolder;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            #divDescTab{
-                grid-area: ddta;
-                table{
-                    width: 96%;
-                    margin-left: 2%;
-                    margin-right: 2%;
-                    margin-top: 1%;
-                    tbody{
-                        tr{
-                            border-bottom: rgba(0,0,0,.125) dashed 0.5px;
-                            td{
-                                width: 50%;
-                                font-size: 1.7vh;
-                            }
-                        }
-                    }
-                }
+        .list-group{
+            height: 30%;
+            .list-group-item{
+                height: 33.3333%;
             }
         }
     }
+    #cardDesc2{
+        height: 90%;
+        width: 30%;
+        .card-header{
+            height: 10%;
+            color: #0d6efd;
+        }
+        .card-body{
+            height: 80%;
+            tr{
+                td{
+                    border-bottom: #6c757d dotted 0.5px;
+                }
+            }
+        }
+        .card-footer{
+            height: 10%;
+        }
+    }
 }
+

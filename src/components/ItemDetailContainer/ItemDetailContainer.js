@@ -1,6 +1,4 @@
-import React from 'react'
-import { useEffect, useState } from 'react';
-//import { getFetch, getFetch2 } from '../Products/getFetch';
+import React, { useEffect, useState }  from 'react'
 import ItemDetail from './ItemDetail/ItemDetail';
 import './ItemDetailContainer.scss'
 import { useParams } from 'react-router';
@@ -14,27 +12,24 @@ const ItemDetailContainer = () => {
     useEffect(()=>{
         const dbQuery = getFirestore()
 
-        dbQuery.collection('products').doc(ID).get() //traer uno por id
-        .then(res => setProducto( { id: res.id, ...res.data() } ))
+        dbQuery.collection('WareHouse').doc(ID).get()
+        .then(res=>setProducto({id: res.id, ...res.data()}))
         .catch(err => console.log(err))
-        .finally(setLoading(false))
-
+        .finally(()=>setLoading(false))
     },[ID])
 
-    //console.log(producto)
-
     return (
-        
-        <section className="idc" id="extra2" >
-            { loading ? 
+        <section className='main-catalog container-fluid' >
+            { loading ?
                 <>
-                    <div className="btn btn-primary" >
-                        <span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-                        <span className="sr-only">Cargando...</span>
+                    <div className='btn btn-primary' >
+                        <span className='spinner-grow spinner-grow-sm' role='status' aria-hidden='true'></span>
+                        <span className='sr-only'>Cargando...</span>
                     </div>
                 </>
-                :
-            <ItemDetail itemDet={producto} />}
+            :
+                <ItemDetail itemDet={producto} />
+            }
         </section>
     )
 }

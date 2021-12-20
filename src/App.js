@@ -6,19 +6,21 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/Cart/Cart';
 import CartContextProvider  from './Context/CartContext';
+import Footer from './components/NavBar/Footer';
 
 function App() {
   return (
     <CartContextProvider>
       <BrowserRouter>
-        <div className="App" id="App" >            
+        <div className="App" id="App" >
           <Navbar />
           <Routes>
             <Route exact path='/' element={<ItemListContainer greeting="Bienvenido a tu e-commerce de confianza" />} />
             <Route exact path='/category/:categoryID' element={<ItemListContainer greeting="Bienvenido a tu e-commerce de confianza" />} />
             <Route exact path='/detail/:ID' element={<ItemDetailContainer />} />
             <Route exact path='/cart' element={ <Cart/> } />
-          </Routes>            
+          </Routes>
+          <Footer/>
         </div>
       </BrowserRouter>
     </CartContextProvider>

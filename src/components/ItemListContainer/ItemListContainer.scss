@@ -1,109 +1,50 @@
-#main {
-  margin-top: 8vh;
-  width: 100%;
-  #greet {
-    width: 100%;
-    height: 7vh;
+.main-catalog{
+    height: 85vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    h1{
-      font-size: 5vh;
-    }
-  }
-  #catalog {
-    height: 84vh;
-    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
     overflow: auto;
-    #fullCard{
-      width: 15%;
-      height: 65%;
-      margin: 1%;
-      display: grid;
-      grid-template-columns: 100%;
-      grid-template-rows: 55% 45%;
-      grid-template-areas:
-        "im"
-        "bo";
-      #imgCard{
-        grid-area: im;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        img{
-          width: 85%;
+    .card{
+        height: 70%;
+        width: 14%;
+        margin: 1%;
+        margin-top: 3%;
+        #link1{
+            height: 85%;
+            text-decoration: none;
+            .card-header{
+                height: 15%;
+            }
+            .card-body{
+                height: 55%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .card-img-top{
+                    height: auto;
+                    max-width: 100%;
+                }
+            }
+            .list-group{
+                height: 30%;
+                font-size: medium;
+                .list-group-item{
+                    height: 50%;
+                    border: none;
+                }
+            }
         }
-      }
-      #bodyCard{
-        grid-area: bo;
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 35% 15% 15% 15% 20%;
-        grid-template-areas: 
-          "ct"
-          "cc"
-          "cp"
-          "cs"
-          "cb";
-        #cTit{
-          grid-area: ct;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #0d6efd;
-          font-size: 1vw;
-          font-weight: bolder;
-          text-align: center;
-        }
-        #cCat{
-          grid-area: cc;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        #cPri{
-          grid-area: cp;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-        #cSto{
-          grid-area: cs;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-
-        }
-        #cBut{
-          grid-area: cb;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          .btn{
-            height: 80%;
+        .card-footer{
+            height: 15%;
             display: flex;
             align-items: center;
             justify-content: center;
-          }
         }
-      }
     }
-    @media (prefers-reduced-motion: no-preference) {
-      .App-logo {
-        animation: App-logo-spin infinite 1s linear;
-      }
-      @keyframes App-logo-spin {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
-      }
+    #card:hover{
+        transform: scale(1.05);
+        border: #0d6efd solid 5px;
     }
-  }
 }
